@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InformeConvenioDetallado" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98c9c485-11a8-4143-9a2b-0ac36142da20">
+	<subDataset name="Dataset1" uuid="dd04158b-7a59-4262-bf1a-f8ec5672e1f1">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="bbb25a29-0e6d-4e8e-b856-f9cc2929aa6a">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="seguimiento.id" class="java.lang.Integer"/>
+		<field name="seguimiento.actividad" class="java.lang.String"/>
+		<field name="seguimiento.fecha" class="java.util.Date"/>
+	</subDataset>
+	<parameter name="order" class="java.lang.String"/>
+	<parameter name="desdeId" class="java.lang.Integer"/>
+	<parameter name="hastaId" class="java.lang.Integer"/>
+	<parameter name="desdeNombre" class="java.lang.String"/>
+	<parameter name="hastaNombre" class="java.lang.String"/>
+	<parameter name="seguimiento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<field name="duracion" class="java.lang.String"/>
+	<field name="fecha_inicio" class="java.util.Date"/>
+	<field name="fecha_caducidad" class="java.util.Date"/>
+	<field name="seguimiento" class="java.util.List"/>
+	<field name="seguimiento.actividad" class="java.lang.String"/>
+	<field name="seguimiento.fecha" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="-10" width="432" height="41" uuid="24626d2b-9e64-4789-a9f0-f1b0dd79e281"/>
+				<textElement textAlignment="Center">
+					<font size="29"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Informe de Convenio detallado"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="100" height="21" uuid="6ad712e9-35dc-47a5-85b2-38144a5425c1"/>
+				<textFieldExpression><![CDATA["Fecha: " +new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="20" width="120" height="20" uuid="8a504a7a-c3b3-45ce-916a-ea01e8e249d6"/>
+				<textFieldExpression><![CDATA["Desde Nombre: "+$P{desdeNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="23" width="128" height="16" uuid="8afc8395-f830-4c58-9763-9842cc457db9"/>
+				<textFieldExpression><![CDATA["Hasta Nombre: "+$P{hastaNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="120" height="15" uuid="b408812c-9683-4b4f-9eda-e12f0986a5ab"/>
+				<textFieldExpression><![CDATA["Desde Codigo: "+$P{desdeId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="4" width="129" height="16" uuid="068e4da8-620e-4aaf-a047-b0e8429bbf9a"/>
+				<textFieldExpression><![CDATA["Hasta Codigo: "+$P{hastaId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="7" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="60" height="20" uuid="3f73b4ad-3523-451f-a85e-882390a64632">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a84a39aa-340d-499a-9cf1-635ce598e318"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Id"+$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="20" width="147" height="20" uuid="54c0fc5f-4a3b-481d-bd86-16c50983aa83">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be910b72-4516-463a-9643-ab1f2dfa5d4b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Nombre"+$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="22" width="69" height="20" uuid="847d3ec0-51a2-4773-bc1c-37f75853594e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be910b72-4516-463a-9643-ab1f2dfa5d4b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Categoria"+$F{categoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="20" width="66" height="20" uuid="bde867f9-9fad-4644-83c0-fb1df7c507dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be910b72-4516-463a-9643-ab1f2dfa5d4b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["duracion"+$F{duracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="25" width="69" height="15" uuid="b8029248-d64b-4736-a9f1-6e87a17d16a8"/>
+				<textFieldExpression><![CDATA["F.Inicio"+$F{fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="24" width="90" height="17" uuid="31e2533c-52f2-4c42-9b9e-93c107a65673"/>
+				<textFieldExpression><![CDATA["F.Caducidad"+$F{fecha_caducidad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="8" width="521" height="1" uuid="98b3c569-0097-4d54-8589-a0ea9007ef9a"/>
+			</line>
+			<line>
+				<reportElement x="12" y="50" width="521" height="1" uuid="d1cf9912-0461-4ea9-860e-a978c1735b28"/>
+			</line>
+			<componentElement>
+				<reportElement x="1" y="57" width="540" height="30" uuid="be4f7aa3-c778-4f75-aa04-07a4dd843c4e"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="Dataset1" uuid="c8c2e2d7-3af1-4d32-96e9-590f0020dc83">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{seguimiento})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="540">
+						<textField>
+							<reportElement x="60" y="0" width="200" height="20" uuid="35b61f47-9040-4b21-8f35-04481b4e7bd1">
+								<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be910b72-4516-463a-9643-ab1f2dfa5d4b"/>
+							</reportElement>
+							<textFieldExpression><![CDATA["Actividad"+$F{seguimiento.actividad}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="285" y="2" width="200" height="21" uuid="1e16e2fb-436f-4ff7-aebf-423f19a3695d">
+								<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be910b72-4516-463a-9643-ab1f2dfa5d4b"/>
+							</reportElement>
+							<textFieldExpression><![CDATA["Fecha"+$F{seguimiento.fecha}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="531" y="0" width="41" height="20" uuid="9d8d8aec-eb0b-4970-944c-3fb44ba99aa9"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA["de  " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="0" width="41" height="20" uuid="5d2f338f-c617-427c-84c9-b02981b1a186"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pag.  " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
